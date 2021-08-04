@@ -30,7 +30,7 @@ const DeleteButton = (props) => {
                 startIcon={<DeleteIcon />}
                 onClick={deletePost}
         >
-          Delete
+        
             </Button>
             </div>
     )   

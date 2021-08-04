@@ -1,12 +1,14 @@
 import React from 'react';
 import {useAuth0} from '@auth0/auth0-react'
 import Button from "@material-ui/core/Button";
+import useStyles from './LoginButton.style'
 
 
 const LoginButton = () => {
     const {loginWithRedirect} = useAuth0();
+    const classes = useStyles()
     return(
-        <Button onClick={loginWithRedirect}>Login</Button>
+        <Button className={classes.loginButton}onClick={loginWithRedirect}>Login</Button>
     )
 }
 

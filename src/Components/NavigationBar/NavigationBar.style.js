@@ -22,7 +22,20 @@ const useStyles = makeStyles((theme) => ({
   button:{
       color:"white",
       fontSize: '1em',
-  }
+      textTransform: 'none', 
+      backgroundColor: '#ffbc8b',
+      textDecoration: 'none',
+      underline: 'none',
+  },
+  button2 :{
+    color:"white",
+    fontSize: '1em',
+    textTransform: 'none', 
+    backgroundColor: '#ffbc8b',
+    textDecoration: 'none',
+    underline: 'none',
+    marginLeft: '3em',
+}
   
 
   }));

@@ -29,7 +29,7 @@ btn: {
   
   text: {
     position: "absolute",
-    top: "27%",
+    top: "37%",
     left: "14%",
       marginLeft: '9em',
       color: "#ffbc8b",

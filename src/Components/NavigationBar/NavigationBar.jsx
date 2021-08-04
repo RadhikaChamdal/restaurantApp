@@ -1,14 +1,14 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import { Router,Link } from "@reach/router";
+import { Link } from "@reach/router";
 import {useAuth0} from '@auth0/auth0-react'
 import Button from '@material-ui/core/Button';
 import useStyles from "./NavigationBar.style";
 import LoginButton from "../LoginButton/LoginButton";
 import LogOut from "../logoutButton/logoutButton";
-import HomePage from "../HomePage/HomePage";
-import ShoppingCartPage from "../ShoppingCartPage/shoppingCart";
+import { Typography } from "@material-ui/core";
+
 
 const Navigation = () => {
   const classes = useStyles();
@@ -27,15 +27,15 @@ const Navigation = () => {
 
       <AppBar  position="static">
         <Toolbar variant="dense">
-          <Link to="home">
+          <Link style={{textDecoration:"none"}} to="/">
               <Button className={classes.button}>
-              Home Page
+             <Typography className={classes.homePage}>Home Page</Typography>
               </Button>
- 
           </Link>
-          <Link to="cart">
-          <Button className={classes.button}>
-              View the cart
+          
+          <Link style={{textDecoration:"none"}} to="cart">
+          <Button className={classes.button2}>
+          <Typography>View the Cart</Typography>
               </Button>
           </Link>
           {AuthNav()}
