@@ -5,8 +5,8 @@ import { Link } from "@reach/router";
 import {useAuth0} from '@auth0/auth0-react'
 import Button from '@material-ui/core/Button';
 import useStyles from "./NavigationBar.style";
-import LoginButton from "../LoginButton/LoginButton";
-import LogOut from "../logoutButton/logoutButton";
+import LoginButton from "../../Atoms/LoginButton/LoginButton";
+import LogOut from "../../Atoms/logoutButton/logoutButton";
 import { Typography } from "@material-ui/core";
 
 

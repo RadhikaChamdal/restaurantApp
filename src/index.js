@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { Router } from "@reach/router";
-import HomePage from "./Components/HomePage/HomePage.jsx";
-import ShoppingCartPage from "../src/Components/ShoppingCartPage/shoppingCartPage";
+import HomePage from "./Components/Pages/HomePage/HomePage";
+import ShoppingCartPage from "./Components/Pages/ShoppingCartPage/shoppingCartPage";
 
 
 ReactDOM.render(

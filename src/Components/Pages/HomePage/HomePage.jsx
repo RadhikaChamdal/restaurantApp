@@ -1,11 +1,12 @@
 import React from "react";
 
-import mediumBackground from "../Assets/mediumBackground.jpg";
+import mediumBackground from "../../Assets/mediumBackground.jpg";
 import Button from "@material-ui/core/Button";
-import Cards from "../Cards/Cards";
+import Cards from "../../Molecules/Cards/Cards";
 import useStyles from "./HomePage.style";
-import FormDialog from "../Form/Forms";
-import Navigation from "../NavigationBar/NavigationBar";
+import FormDialog from "../../Molecules/Form/Forms";
+import Navigation from "../../Organisms/NavigationBar/NavigationBar";
+
 
 const HomePage = () => {
   const classes = useStyles();
@@ -14,6 +15,7 @@ const HomePage = () => {
     <>
       <div className={classes.container}>
         <Navigation />
+
         <img
           className={classes.image}
           src={mediumBackground}

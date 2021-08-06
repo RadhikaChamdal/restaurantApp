@@ -5,11 +5,13 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Button from '@material-ui/core/Button';
-import UpdateForm from "../updateFormDialog/updateFormDialog";
+import UpdateForm from "../../Organisms/updateFormDialog/updateFormDialog";
 
 import useStyles from "./Cards.style";
-import DeleteButton from "../DeleteButton/deleteButton";
-import ShoppingCart from '../ShoppingCart/shoppingCart'
+import DeleteButton from "../../Atoms/DeleteButton/deleteButton";
+import ShoppingCart from '../../Atoms/ShoppingCart/shoppingCart'
+import SingleCard from "../../Atoms/Card/Card";
+import MultipleCards from "../MultipleCards/MultipleCards";
 
 const Cards = (props) => {
   const { currentId } = props;
@@ -24,12 +26,13 @@ const Cards = (props) => {
     Axios.get("http://localhost:5000/posts").then((response) => {
       const data = response.data;
       setAllMeals(data);
-      console.log(allMeals)
+      console.log(data, "data")
     });
 
   };
 
-    fetchMeals();
+  console.log(allMeals[0].foodName, "allmeals")
+    // fetchMeals();
 
 
   useEffect(() => {
@@ -56,17 +59,25 @@ const Cards = (props) => {
     setPage("Meals")
   }
 
+  let dataVal=[
+    {headerText: `${allMeals[0].foodName}`, foodName:`${allMeals[0].drinkName}`, drinkName: `${allMeals[0].price}`},
+    {headerText: `${allMeals[1].foodName}`, foodName:`${allMeals[1].drinkName}`, drinkName: `${allMeals[1].price}`},
+    {headerText: `${allMeals[2].foodName}`,  foodName:`${allMeals[2].drinkName}`, drinkName: `${allMeals[2].price}`}
+]
   return (
     <>
-      {page === 'Meals' && (
+      {/* {page === 'Meals' && ( */}
         <>
          <header className={classes.cartButton}>
-         {/* <Button onClick= {fetchMeals}>click for all meals</Button>  */}
-      <Button className={classes.cartBtn} onClick= {nextPage}>CART ITEMS({cart.length})</Button> 
+         <Button onClick= {fetchMeals}>click for all meals</Button> 
+      <Button className={classes.cartBtn} onClick= {nextPage}>CART ITEMS({cart.length})</Button>
       </header>
+      </>
 
-      {allMeals && Array.isArray(allMeals) && allMeals.length > 0 && (
+      {/* {allMeals && Array.isArray(allMeals) && allMeals.length > 0 && (
           <div className={classes.cardContainer}>
+
+            
             {allMeals?.map((eachMeal) => (
               <Card className={classes.root}>
                 <CardContent>
@@ -101,15 +112,17 @@ const Cards = (props) => {
                   />
                 </CardActions>
               </Card>
-            ))}
-          </div>
+            ))} */}
+            <MultipleCards data={dataVal} />
+            {/* <SingleCard /> */}
+          {/* </div> */}
        
-          )}
-        </>
+           {/* )} 
+        </> */}
         
-      )}
-     
-    {page === "Cart" && (
+      {/* )} */}
+     {/* </> */}
+     {page === "Cart" && (
         <>
           <Button className={classes.backBtn} onClick={backPage}>Back</Button>
         
@@ -154,9 +167,12 @@ const Cards = (props) => {
      </div>
          
           </>
-      )}
+      )} 
     </>
-  );
-};
+  
+
+  )
+
+}
 
 export default Cards;

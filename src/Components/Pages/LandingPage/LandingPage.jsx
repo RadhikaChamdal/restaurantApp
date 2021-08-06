@@ -2,7 +2,7 @@ import React from "react";
 import { Router, Link } from "@reach/router";
 import HomePage from "../HomePage/HomePage";
 import ShoppingCartPage from "../ShoppingCartPage/shoppingCartPage";
-import Navigation from "../NavigationBar/NavigationBar";
+import Navigation from "../../Organisms/NavigationBar/NavigationBar";
 
 const LandingPage = () => {
   return (
