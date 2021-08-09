@@ -31,7 +31,7 @@ const Cards = (props) => {
 
   };
 
-  console.log(allMeals[0].foodName, "allmeals")
+  // console.log(allMeals[0].foodName, "allmeals")
     // fetchMeals();
 
 
@@ -59,11 +59,17 @@ const Cards = (props) => {
     setPage("Meals")
   }
 
-  let dataVal=[
+
+  let dataVal
+if(allMeals) {
+  dataVal=[
     {headerText: `${allMeals[0].foodName}`, foodName:`${allMeals[0].drinkName}`, drinkName: `${allMeals[0].price}`},
     {headerText: `${allMeals[1].foodName}`, foodName:`${allMeals[1].drinkName}`, drinkName: `${allMeals[1].price}`},
-    {headerText: `${allMeals[2].foodName}`,  foodName:`${allMeals[2].drinkName}`, drinkName: `${allMeals[2].price}`}
+    {headerText: `${allMeals[2].foodName}`,  foodName:`${allMeals[2].drinkName}`, drinkName: `${allMeals[2].price}`},
+    {headerText: `${allMeals[3].foodName}`,  foodName:`${allMeals[3].drinkName}`, drinkName: `${allMeals[3].price}`}
 ]
+}
+  
   return (
     <>
       {/* {page === 'Meals' && ( */}
@@ -73,6 +79,14 @@ const Cards = (props) => {
       <Button className={classes.cartBtn} onClick= {nextPage}>CART ITEMS({cart.length})</Button>
       </header>
       </>
+
+      {allMeals && Array.isArray(allMeals) && allMeals.length > 0 && (
+        <div className={classes.cardContainer}>
+              
+    <MultipleCards data={dataVal} />
+
+  </div>
+            )}
 
       {/* {allMeals && Array.isArray(allMeals) && allMeals.length > 0 && (
           <div className={classes.cardContainer}>
@@ -113,7 +127,9 @@ const Cards = (props) => {
                 </CardActions>
               </Card>
             ))} */}
-            <MultipleCards data={dataVal} />
+           
+
+            {/* <MultipleCards data={dataVal} /> */}
             {/* <SingleCard /> */}
           {/* </div> */}
        

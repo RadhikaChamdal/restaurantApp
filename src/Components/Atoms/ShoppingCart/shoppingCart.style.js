@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
     shoppingCartBtn: {
     margin: theme.spacing(1),
     marginTop: "-15.5em",
-    marginLeft: "2em",
+    marginLeft: "12em",
     position:"absolute",
     width: '8em',
   },
