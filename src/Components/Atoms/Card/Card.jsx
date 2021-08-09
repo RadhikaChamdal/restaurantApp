@@ -7,7 +7,7 @@ const Card = () => {
     const classes = useStyles()
 
     let dataVal=[
-        {headerText: 'test', foodName:'test', drinkName: 'test', priceNumber:"12"}
+        {foodName:'', drinkName: '', price:""}
     ]
     return(
         <>

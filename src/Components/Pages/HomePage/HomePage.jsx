@@ -7,7 +7,6 @@ import useStyles from "./HomePage.style";
 import FormDialog from "../../Molecules/Form/Forms";
 import Navigation from "../../Organisms/NavigationBar/NavigationBar";
 
-
 const HomePage = () => {
   const classes = useStyles();
 

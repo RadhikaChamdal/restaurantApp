@@ -18,19 +18,19 @@ const MultipleCards = (props) => {
     return(
         <>
         {data.map((obj) => (
-            <div className ={classes.wholeCard}> 
+            <> 
              <Card className={classes.root}>
           <CardContent>  
-            <Typography className={classes.titles} variant="h5" component="h2" text={`Food Name:${obj.headerText}`} />
-            <Typography className={classes.titles} color="textSecondary" text={`Drink Name: ${obj.foodName}`} />
-            <Typography className={classes.titles} variant="body2" component="p" text={`Price: ${obj.priceNumber}`} />
+            <Typography className={classes.titles} variant="h5" component="h2" text={`Food Name:${obj.foodName}`} />
+            <Typography className={classes.titles} color="textSecondary" text={`Drink Name: ${obj.drinkName}`} />
+            <Typography className={classes.titles} variant="body2" component="p" text={`Price: ${obj.price}`} />
           </CardContent>
           <CardActions className={classes.container}>
-            <DeleteButton />
+            <DeleteButton currentId={obj.id}/>
             <ShoppingCart />
           </CardActions>
         </Card>
-            </div>
+            </>
         ))}
      </>  
     )

@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '1em',
       fontWeight: 600,
       color: '#ffbc8b',
+      width: '13em',
   },
 
 container: {
