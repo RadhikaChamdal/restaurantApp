@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import Match from "@reach/router" 
+import {Match} from "@reach/router"
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -39,14 +39,16 @@ const Cards = (props) => {
 
   const addToCart = (eachMeal) => {
     setCart([...cart, eachMeal]);
-    console.log("cards are in cart");
+    console.log("cards are in cart", cart.length);
   };
+
 
   return (
     <>
       <>
+      
         <header className={classes.cartButton}>
-          <Button className={classes.cartBtn}>CART ITEMS({cart.length})</Button>
+          <Button className={classes.cartBtn}>{`CART ITEMS: ${cart.length}`}</Button>
         </header>
       </>
 
@@ -57,17 +59,18 @@ const Cards = (props) => {
           </div>
         </>
       )}
+      
 
-      {page === "Cart" && (
+      {page === "Meal" && (
         <>
           {/* <>
             <div className={classes.cardContainer}>
-              <MultipleCards data={cart} />
+              <MultipleCards data={setCart} />
             </div>
           </> */}
 
-
-          <div className={classes.cardContainer}>
+   
+       <div className={classes.cardContainer}>
             {cart?.map((eachMeal) => (
               <Card className={classes.root}>
                 <CardContent>
@@ -104,7 +107,9 @@ const Cards = (props) => {
               </Card>
             ))}
      
-          </div>
+          </div> 
+ 
+          
         </>
       )}
     </>

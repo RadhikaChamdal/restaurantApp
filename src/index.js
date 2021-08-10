@@ -12,12 +12,11 @@ ReactDOM.render(
     clientId="XDo0CLA6izkypsyBOvfM8vyOT2EPBzhq"
     redirectUri={window.location.origin}
   >
-
       <Router>
         <HomePage path="/" />
         <ShoppingCartPage path="/cart" />
-      </Router>
-  
+      </Router> 
+
   </Auth0Provider>,
   document.getElementById("root")
 );

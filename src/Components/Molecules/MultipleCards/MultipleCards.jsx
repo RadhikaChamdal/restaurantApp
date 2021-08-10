@@ -1,5 +1,4 @@
 import React from 'react';
-import SingleCard from '../../Atoms/Card/Card';
 import Typography from '../../Atoms/Typography/Typography'
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
