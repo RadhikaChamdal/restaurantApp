@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { Router } from "@reach/router";
 import HomePage from "./Components/Pages/HomePage/HomePage";
+import BookingPage from './Components/Pages/BookingPage/BookingPage'
 import ShoppingCartPage from "./Components/Pages/ShoppingCartPage/shoppingCartPage";
 
 
@@ -15,6 +16,7 @@ ReactDOM.render(
       <Router>
         <HomePage path="/" />
         <ShoppingCartPage path="/cart" />
+        <BookingPage path="/booking" />
       </Router> 
 
   </Auth0Provider>,

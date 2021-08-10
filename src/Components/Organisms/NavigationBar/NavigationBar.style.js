@@ -35,8 +35,32 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
     underline: 'none',
     marginLeft: '3em',
-}
+    width: '9em',
+    marginTop: '0em',
+},
+
+button3 :{
+  color:"white",
+  fontSize: '1em',
+  textTransform: 'none', 
+  backgroundColor: '#ffbc8b',
+  textDecoration: 'none',
+  underline: 'none',
+  marginLeft: '3em',
+  width: '9em',
+  marginTop: '0em',
+},
   
+loginButton:{
+  marginRight: '1em',
+  marginLeft: '26em',
+  marginTop: '1em'
+},
+
+buttonContainer:{
+  marginLeft: '-4em',
+  marginTop: '0.3em'
+}
 
   }));
   

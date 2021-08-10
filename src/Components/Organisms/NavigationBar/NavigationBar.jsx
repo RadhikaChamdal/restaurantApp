@@ -25,10 +25,12 @@ const Navigation = () => {
   return (
     <>
 
+<div className={classes.buttonContainer}>
       <AppBar  position="static">
         <Toolbar variant="dense">
+        
           <Link style={{textDecoration:"none"}} to="/">
-              <Button className={classes.button}>
+              <Button className={classes.button2}>
              <Typography className={classes.homePage}>Home Page</Typography>
               </Button>
           </Link>
@@ -38,10 +40,16 @@ const Navigation = () => {
           <Typography>View the Cart</Typography>
               </Button>
           </Link>
+          <Link style={{textDecoration:"none"}} to="booking">
+          <Button className={classes.button2}>
+          <Typography>Bookings</Typography>
+              </Button>
+              </Link>
           {AuthNav()}
+          
         </Toolbar>
       </AppBar>
-
+      </div>
      
     </>
   );

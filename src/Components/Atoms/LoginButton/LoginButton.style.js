@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
      color: 'white',
      textTransform:'none',
      textAlign: 'end',
-     marginLeft: '96em',
+     marginLeft: '76em',
      backgroundColor:'#ffbc8b',
  }
 }))
