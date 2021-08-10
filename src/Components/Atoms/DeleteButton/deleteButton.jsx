@@ -23,6 +23,7 @@ const DeleteButton = (props) => {
         className={classes.button}
         startIcon={<DeleteIcon />}
         onClick={deletePost}
+        currentId={currentId}
       ></Button>
     </div>
   );

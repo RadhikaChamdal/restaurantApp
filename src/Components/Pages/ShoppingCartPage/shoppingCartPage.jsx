@@ -21,6 +21,7 @@ const ShoppingCartPage = () => {
         </Button>
       </div>
       <h1 className={classes.header}> Cart Items </h1>
+      
     </>
   );
 };

@@ -1,10 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from "@material-ui/core/Button";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import useStyles from "./shoppingCart.style";
 
 const ShoppingCart = (props) => {
-    const {onClick} = props
+  const { currentId } = props;
+
+  const [cart, setCart] = useState([])
+
+  const addToCart = (eachMeal) => {
+    setCart([...cart, eachMeal]);
+    console.log("are in cart");
+  };
 
 
   const classes = useStyles();
@@ -14,12 +21,11 @@ const ShoppingCart = (props) => {
       <Button
         variant="contained"
         color="primary"
-              className={classes.shoppingCartBtn}
-              onClick = {onClick}
-              startIcon={<ShoppingCartIcon />}
-      >
-
-      </Button>
+        className={classes.shoppingCartBtn}
+        onClick={addToCart}
+        currentId={currentId}
+        startIcon={<ShoppingCartIcon />}
+      ></Button>
     </div>
   );
 };

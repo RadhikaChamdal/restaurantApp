@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import Match from "@reach/router" 
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -38,76 +39,36 @@ const Cards = (props) => {
 
   const addToCart = (eachMeal) => {
     setCart([...cart, eachMeal]);
-    console.log("are in cart");
+    console.log("cards are in cart");
   };
-
-  const nextPage = () => {
-    setPage("Cart");
-  };
-
-  const backPage = () => {
-    setPage("Meals");
-  };
-
-  let dataVal;
-  if (allMeals) {
-    dataVal = [
-      {
-        headerText: `${allMeals[0].foodName}`,
-        foodName: `${allMeals[0].drinkName}`,
-        drinkName: `${allMeals[0].price}`,
-      },
-      {
-        headerText: `${allMeals[1].foodName}`,
-        foodName: `${allMeals[1].drinkName}`,
-        drinkName: `${allMeals[1].price}`,
-      },
-      {
-        headerText: `${allMeals[2].foodName}`,
-        foodName: `${allMeals[2].drinkName}`,
-        drinkName: `${allMeals[2].price}`,
-      },
-      {
-        headerText: `${allMeals[3].foodName}`,
-        foodName: `${allMeals[3].drinkName}`,
-        drinkName: `${allMeals[3].price}`,
-      },
-    ];
-  }
 
   return (
     <>
-      {/* {page === 'Meals' && ( */}
       <>
         <header className={classes.cartButton}>
-          <Button className={classes.cartBtn} onClick={nextPage}>
-            CART ITEMS({cart.length})
-          </Button>
+          <Button className={classes.cartBtn}>CART ITEMS({cart.length})</Button>
         </header>
       </>
 
       {allMeals && Array.isArray(allMeals) && allMeals.length > 0 && (
         <>
-        
           <div className={classes.cardContainer}>
-          {/* {allMeals.map((eachMeal) => ( */}
-          <MultipleCards data={dataVal} />
-          {/* ))} */}
-        </div>
-       
-        </> 
-       
+            <MultipleCards data={allMeals} />
+          </div>
+        </>
       )}
 
       {page === "Cart" && (
         <>
-          <Button className={classes.backBtn} onClick={backPage}>
-            Back
-          </Button>
+          {/* <>
+            <div className={classes.cardContainer}>
+              <MultipleCards data={cart} />
+            </div>
+          </> */}
+
 
           <div className={classes.cardContainer}>
             {cart?.map((eachMeal) => (
-              
               <Card className={classes.root}>
                 <CardContent>
                   <Typography
@@ -142,8 +103,8 @@ const Cards = (props) => {
                 </CardActions>
               </Card>
             ))}
+     
           </div>
-          console.log(eachMeal._id)
         </>
       )}
     </>

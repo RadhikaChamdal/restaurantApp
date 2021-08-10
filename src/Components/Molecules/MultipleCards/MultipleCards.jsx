@@ -11,14 +11,16 @@ import ShoppingCart from '../../Atoms/ShoppingCart/shoppingCart';
 
 
 const MultipleCards = (props) => {
-    const {data} = props
+    const {data, addToCart} = props
 
     const classes = useStyles()
 
+    // TO BE ON THE HOME PAGE 
     return(
         <>
         {data.map((obj) => (
-            <> 
+          <>
+             {console.log(obj)}
              <Card className={classes.root}>
           <CardContent>  
             <Typography className={classes.titles} variant="h5" component="h2" text={`Food Name:${obj.foodName}`} />
@@ -26,13 +28,15 @@ const MultipleCards = (props) => {
             <Typography className={classes.titles} variant="body2" component="p" text={`Price: ${obj.price}`} />
           </CardContent>
           <CardActions className={classes.container}>
-            <DeleteButton currentId={obj.id}/>
-            <ShoppingCart />
+            <DeleteButton currentId={obj._id} />
+            <ShoppingCart currentId={obj._id}/>
           </CardActions>
         </Card>
-            </>
+          </>  
         ))}
      </>  
+
+    //  TO BE ON THE CART PAGE PASS IN A PROP CHECKING THE TYPE OF CARD
     )
 }
 
