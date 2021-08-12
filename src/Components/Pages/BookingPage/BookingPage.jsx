@@ -4,9 +4,10 @@ import useStyles from './BookingPage.style'
 import Navigation from "../../Organisms/NavigationBar/NavigationBar";
 import BookingForm from '../../Organisms/BookingForm/BookingForm'
 
-const HomePage = () => {
+const BookingPage = () => {
   const classes = useStyles();
 
+  //  if logged in can make a booking 
   return (
     <>
       <div className={classes.container}>
@@ -25,4 +26,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default BookingPage;

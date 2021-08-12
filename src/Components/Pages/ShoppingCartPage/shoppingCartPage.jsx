@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 import { Link } from "@reach/router";
 import useStyles from "./shoppingCartPage.style";
 import Navigation from "../../Organisms/NavigationBar/NavigationBar";
+import MultipleCards from "../../Molecules/MultipleCards/MultipleCards";
 
 const ShoppingCartPage = () => {
   const classes = useStyles();
@@ -19,6 +20,14 @@ const ShoppingCartPage = () => {
         <Button className={classes.btn} disabled={true}>
           Scroll down to check out your cart!
         </Button>
+      
+        <>
+        <>
+          <div className={classes.cardContainer}>
+            <MultipleCards />
+          </div>
+        </>
+      </>
       </div>
       <h1 className={classes.header}> Cart Items </h1>
       
