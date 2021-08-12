@@ -29,7 +29,7 @@ const MultipleCards = (props) => {
           </CardContent>
           <CardActions className={classes.container}>
             {/* <DeleteButton currentId={obj._id} /> */}
-            <ShoppingCart  addMeal={addMeal} currentId={obj._id}/>
+            <ShoppingCart addMeal={addMeal} currentId={obj._id}/>
           </CardActions>
         </Card>
           </>  

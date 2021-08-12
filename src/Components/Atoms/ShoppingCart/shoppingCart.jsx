@@ -1,4 +1,5 @@
 import React from "react";
+import Axios from 'axios'
 import Button from "@material-ui/core/Button";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import useStyles from "./shoppingCart.style";
@@ -6,11 +7,22 @@ import useStyles from "./shoppingCart.style";
 const ShoppingCart = (props) => {
   const { currentId, addMeal, ...other } = props;
 
-  const clickHandler = (event) => {
-    addMeal(currentId);
-    console.log("inside click");
-  };
 
+  const [mealById,setMealById] = React.useState('')
+
+  // const clickHandler = (event) => {
+  //   addMeal(mealById);
+  //   console.log("inside click");
+  // };
+  
+  const fetchMealsById = () => {
+    Axios.get(`http://localhost:5000/posts/${currentId}`).then((response) =>{
+      const data = response.data
+      console.log(data, 'data')
+      setMealById(response.data)
+      addMeal(data);
+    })
+  }
   const classes = useStyles();
 
   return (
@@ -19,7 +31,7 @@ const ShoppingCart = (props) => {
         variant="contained"
         color="primary"
         className={classes.shoppingCartBtn}
-        onClick={clickHandler} // make into function
+        onClick={fetchMealsById} // make into function
         currentId={currentId}
         startIcon={<ShoppingCartIcon />}
       ></Button>

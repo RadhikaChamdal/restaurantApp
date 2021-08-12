@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import { useLocation } from "react-router-dom";
-import { Match } from "@reach/router";
 import Button from "@material-ui/core/Button";
 import UpdateForm from "../../Organisms/updateFormDialog/updateFormDialog";
 
@@ -10,8 +8,6 @@ import MultipleCards from "../MultipleCards/MultipleCards";
 
 const Cards = (props) => {
   const { currentId } = props;
-
-  // console.log(useLocation(), 'location')
   const [allMeals, setAllMeals] = useState("");
   const [newMeal, setNewMeal] = useState("");
   const [cart, setCart] = useState([]);
@@ -26,6 +22,7 @@ const Cards = (props) => {
     });
   };
 
+  console.log(allMeals, 'allmeals')
   useEffect(() => {
     fetchMeals();
   }, [newMeal]);

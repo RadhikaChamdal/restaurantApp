@@ -1,15 +1,17 @@
-import React from "react";
-
+import React, {useState} from "react";
+import Axios from 'axios';
 import mediumBackground from "../../Assets/mediumBackground.jpg";
 import Button from "@material-ui/core/Button";
-import { Link } from "@reach/router";
 import useStyles from "./shoppingCartPage.style";
 import Navigation from "../../Organisms/NavigationBar/NavigationBar";
 import MultipleCards from "../../Molecules/MultipleCards/MultipleCards";
 
-const ShoppingCartPage = () => {
+const ShoppingCartPage = (props) => {
+  const {currentId} = props
+  console.log(props)
   const classes = useStyles();
-
+  
+ let mockData = [{foodName: 'bread', drinkName: 'water'}, {foodName: 'bread', drinkName: 'water'}, {foodName: 'bread', drinkName: 'water'}]
   return (
     <>
       <Navigation />
@@ -20,17 +22,14 @@ const ShoppingCartPage = () => {
         <Button className={classes.btn} disabled={true}>
           Scroll down to check out your cart!
         </Button>
-      
-        <>
-        <>
-          <div className={classes.cardContainer}>
-            <MultipleCards />
-          </div>
-        </>
-      </>
       </div>
       <h1 className={classes.header}> Cart Items </h1>
-      
+      <>
+          <div className={classes.cardContainer}>
+            {/* <Button currentId={currentId} onClick={fetchMealsById}>test</Button> */}
+            <MultipleCards data={mockData} />
+          </div>
+        </>
     </>
   );
 };
