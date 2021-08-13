@@ -10,11 +10,6 @@ const ShoppingCart = (props) => {
 
   const [mealById,setMealById] = React.useState('')
 
-  // const clickHandler = (event) => {
-  //   addMeal(mealById);
-  //   console.log("inside click");
-  // };
-  
   const fetchMealsById = () => {
     Axios.get(`http://localhost:5000/posts/${currentId}`).then((response) =>{
       const data = response.data

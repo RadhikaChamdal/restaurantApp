@@ -6,12 +6,12 @@ import CardContent from "@material-ui/core/CardContent";
 import useStyles from './MultipleCards.style';
 import DeleteButton from '../../Atoms/DeleteButton/deleteButton';
 import ShoppingCart from '../../Atoms/ShoppingCart/shoppingCart';
+import UpdateForm from '../../Organisms/updateFormDialog/updateFormDialog';
 
 
 
 const MultipleCards = (props) => {
     const {data, addMeal} = props
-    console.log(props, "props")
 
     const classes = useStyles()
 
@@ -30,6 +30,7 @@ const MultipleCards = (props) => {
           <CardActions className={classes.container}>
             {/* <DeleteButton currentId={obj._id} /> */}
             <ShoppingCart addMeal={addMeal} currentId={obj._id}/>
+            <UpdateForm currentId={obj._id} />
           </CardActions>
         </Card>
           </>  

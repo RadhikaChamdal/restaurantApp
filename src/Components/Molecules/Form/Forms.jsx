@@ -31,7 +31,6 @@ const FormDialog = () => {
         drinkName: drink,
         price: price,
     }
-    console.log(mealData, "meal")
     
     const addMeal = () => {
       Axios.post('http://localhost:5000/posts', { mealData })

@@ -11,7 +11,7 @@ import useStyles from './updateFormDialog.style'
 
 
 const UpdateForm = (props) => {
-  const { currentId, setNewMeal } = props
+  const { currentId } = props
 
   const classes = useStyles();
 
@@ -20,6 +20,8 @@ const UpdateForm = (props) => {
     const [food, setFood] = useState();
     const [drink, setDrink] = useState();
     const [price, setPrice] = useState()
+    const [numberOfMeals, setNumberOfMeals]= useState(0)
+    const [newMeal, setNewMeal] = useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -33,6 +35,7 @@ const UpdateForm = (props) => {
     foodName: food,
     drinkName: drink,
     price: price,
+    numberOfMeals:numberOfMeals,
   }
 
 
@@ -61,7 +64,7 @@ const UpdateForm = (props) => {
         open={open}
         onClose={handleClose}
       >
-        <DialogTitle id="form-dialog-title">Update this meal</DialogTitle>
+        <DialogTitle>Update this meal</DialogTitle>
         <DialogContent>
           <DialogContentText>
             Type in the fields below to update your own meal!
@@ -82,6 +85,12 @@ const UpdateForm = (props) => {
             label="Enter Price"
             type="number"
             onChange={(event) => {setPrice(event.target.value)}}
+            fullWidth
+          />
+           <TextField
+            label="Enter Quantity"
+            type="number"
+            onChange={(event) => {setNumberOfMeals(event.target.value)}}
             fullWidth
           />
         </DialogContent>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import mediumBackground from "../../Assets/mediumBackground.jpg";
 import Button from "@material-ui/core/Button";
@@ -11,7 +11,12 @@ import Navigation from "../../Organisms/NavigationBar/NavigationBar";
 const HomePage = () => {
   const classes = useStyles();
 
-  return (
+  const [cartItems, setCartItems] = useState('')
+  
+  const cartHandler = (item) => {
+    setCartItems(item)
+  }
+return (
     <>
       <div className={classes.container}>
         <Navigation />
@@ -28,7 +33,7 @@ const HomePage = () => {
       </div>
       <h1 className={classes.header}>Take a look at all of our meals!</h1>
       <>
-        <Cards />
+        <Cards cartItems={cartItems} cartHandler={cartHandler} />
       </>
       <>
         <h1 className={classes.header}>How about adding your own meal!</h1>

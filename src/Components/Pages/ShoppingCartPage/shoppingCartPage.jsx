@@ -7,7 +7,7 @@ import Navigation from "../../Organisms/NavigationBar/NavigationBar";
 import MultipleCards from "../../Molecules/MultipleCards/MultipleCards";
 
 const ShoppingCartPage = (props) => {
-  const {currentId} = props
+  const {currentId, cart} = props
   console.log(props)
   const classes = useStyles();
   
