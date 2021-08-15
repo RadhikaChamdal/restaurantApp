@@ -21,9 +21,15 @@ const Cards = (props) => {
     });
   };
 
+  fetchMeals()
+
   useEffect(() => {
     fetchMeals();
   }, [newMeal]);
+
+  const newMealData = () => {
+    setNewMeal()
+  }
 
 
   //add meal functionality
@@ -92,6 +98,7 @@ const Cards = (props) => {
         <>
           <div className={classes.cardContainer}>
             <MultipleCards
+              newMealData={newMealData}
               addMeal={addMeal}
               cardStyle="cartCards"
               data={allMeals}

@@ -1,5 +1,4 @@
-import React, {useState} from "react";
-import Axios from 'axios';
+import React from "react";
 import mediumBackground from "../../Assets/mediumBackground.jpg";
 import Button from "@material-ui/core/Button";
 import useStyles from "./shoppingCartPage.style";

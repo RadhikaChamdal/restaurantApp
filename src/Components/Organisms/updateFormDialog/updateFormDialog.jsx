@@ -6,12 +6,13 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import UpdateIcon from '@material-ui/icons/Update';
 import Axios from 'axios'
 import useStyles from './updateFormDialog.style'
 
 
 const UpdateForm = (props) => {
-  const { currentId } = props
+  const { currentId, setNewMeal } = props
 
   const classes = useStyles();
 
@@ -21,7 +22,7 @@ const UpdateForm = (props) => {
     const [drink, setDrink] = useState();
     const [price, setPrice] = useState()
     const [numberOfMeals, setNumberOfMeals]= useState(0)
-    const [newMeal, setNewMeal] = useState("");
+     const [test, setTest] = useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -42,12 +43,13 @@ const UpdateForm = (props) => {
 
   const updateMeals = () => {
     Axios.put(`http://localhost:5000/posts/${currentId}`, newMealData).then((response) => {
-      setNewMeal(response.data)
-      console.log(response)
+      setTest(response.data)
+      console.log(test, 'tets')
     });
     setOpen(false)
    
   }
+
 
   useEffect(() => {
     updateMeals()
@@ -56,9 +58,7 @@ const UpdateForm = (props) => {
   return (
     <>
       <div className={classes.buttonPos}>
-         <Button className={classes.button} variant="outlined" color="primary" onClick={handleClickOpen}>
-        Update Meal
-      </Button>
+      <Button onClick={handleClickOpen} color="primary" variant='outlined' startIcon={<UpdateIcon />} />
       </div>
       <Dialog
         open={open}
@@ -98,9 +98,10 @@ const UpdateForm = (props) => {
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button onClick={updateMeals} color="primary">
-            Update meal
-          </Button>
+          <Button className={classes.button} variant="outlined" color="primary" onClick={handleClickOpen}>
+        Update Meal
+      </Button>
+  
         </DialogActions>
       </Dialog>
     </>
