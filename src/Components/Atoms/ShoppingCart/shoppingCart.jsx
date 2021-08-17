@@ -5,7 +5,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import useStyles from "./shoppingCart.style";
 
 const ShoppingCart = (props) => {
-  const { currentId, addMeal, ...other } = props;
+  const { currentId, addMeal } = props;
 
 
   const [mealById,setMealById] = React.useState('')

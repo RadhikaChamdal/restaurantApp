@@ -7,10 +7,9 @@ import useStyles from './MultipleCards.style';
 import ShoppingCart from '../../Atoms/ShoppingCart/shoppingCart';
 
 const MultipleCards = (props) => {
-    const {data, addMeal, newMealData} = props
+    const {data, addMeal} = props
     const classes = useStyles()
-
-    // TO BE ON THE HOME PAGE 
+    
     return(
       <>
         <>
@@ -24,9 +23,7 @@ const MultipleCards = (props) => {
             <Typography className={classes.titles} variant="body2" component="p" text={`Quantity: ${obj.numberOfMeals}`} />
           </CardContent>
           <CardActions className={classes.container}>
-            {/* <DeleteButton currentId={obj._id} /> */}
             <ShoppingCart addMeal={addMeal} currentId={obj._id}/>
-            {/* <UpdateForm newMealData={newMealData} currentId={obj._id} /> */}
           </CardActions>
         </Card>
           </>  

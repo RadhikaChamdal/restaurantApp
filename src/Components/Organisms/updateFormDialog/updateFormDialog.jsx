@@ -6,13 +6,12 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import UpdateIcon from '@material-ui/icons/Update';
 import Axios from 'axios'
 import useStyles from './updateFormDialog.style'
 
 
 const UpdateForm = (props) => {
-  const { currentId, setNewMeal } = props
+  const { currentId, setNewMeal, fetchMeals } = props
 
   const classes = useStyles();
 
@@ -50,10 +49,11 @@ const UpdateForm = (props) => {
    
   }
 
-
   useEffect(() => {
     updateMeals()
   }, [])
+
+  
    
   return (
     <>

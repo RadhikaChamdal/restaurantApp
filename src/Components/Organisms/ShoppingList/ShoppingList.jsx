@@ -13,7 +13,6 @@ import DeleteButton from "../../Atoms/DeleteButton/deleteButton";
 const ShoppingList = (props) => {
   const { cartItems, newMealData } = props;
 
-  console.log(cartItems[0], "props");
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(true);

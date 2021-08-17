@@ -3,7 +3,6 @@ import React, {useState} from "react";
 import mediumBackground from "../../Assets/mediumBackground.jpg";
 import Button from "@material-ui/core/Button";
 import Cards from "../../Molecules/Cards/Cards";
-import { Match } from "@reach/router";
 import useStyles from "./HomePage.style";
 import FormDialog from "../../Molecules/Form/Forms";
 import Navigation from "../../Organisms/NavigationBar/NavigationBar";
