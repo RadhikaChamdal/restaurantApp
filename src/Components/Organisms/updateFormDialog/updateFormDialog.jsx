@@ -58,7 +58,8 @@ const UpdateForm = (props) => {
   return (
     <>
       <div className={classes.buttonPos}>
-      <Button onClick={handleClickOpen} color="primary" variant='outlined' startIcon={<UpdateIcon />} />
+      <Button onClick={handleClickOpen} color="primary" variant='outlined'>
+        Update</Button>
       </div>
       <Dialog
         open={open}
@@ -98,7 +99,7 @@ const UpdateForm = (props) => {
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button className={classes.button} variant="outlined" color="primary" onClick={handleClickOpen}>
+          <Button className={classes.button} variant="outlined" color="primary" onClick={updateMeals}>
         Update Meal
       </Button>
   

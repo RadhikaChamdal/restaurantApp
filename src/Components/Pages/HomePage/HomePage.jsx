@@ -7,6 +7,7 @@ import { Match } from "@reach/router";
 import useStyles from "./HomePage.style";
 import FormDialog from "../../Molecules/Form/Forms";
 import Navigation from "../../Organisms/NavigationBar/NavigationBar";
+import ShoppingList from "../../Organisms/ShoppingList/ShoppingList";
 
 const HomePage = () => {
   const classes = useStyles();
@@ -16,6 +17,8 @@ const HomePage = () => {
   const cartHandler = (item) => {
     setCartItems(item)
   }
+
+//  console.log(cartItems[0].meal.foodName, 'CARTTTTT')
 return (
     <>
       <div className={classes.container}>
@@ -33,7 +36,9 @@ return (
       </div>
       <h1 className={classes.header}>Take a look at all of our meals!</h1>
       <>
+      <ShoppingList cartItems={cartItems} />
         <Cards cartItems={cartItems} cartHandler={cartHandler} />
+       
       </>
       <>
         <h1 className={classes.header}>How about adding your own meal!</h1>

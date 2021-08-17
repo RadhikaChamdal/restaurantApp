@@ -21,7 +21,10 @@ const Cards = (props) => {
     });
   };
 
-  fetchMeals()
+  useEffect(() => {
+    fetchMeals();
+  }, []);
+
 
   useEffect(() => {
     fetchMeals();
@@ -31,58 +34,11 @@ const Cards = (props) => {
     setNewMeal()
   }
 
-
   //add meal functionality
   const addMeal = (addedMeal) => {
     cartHandler([...cartItems, addedMeal]);
-
-    console.log(cartItems, "cartItemsss");
-
-    function getNbOccur(id, cartVals) {
-      var occurs = 0;
-
-      for (var i = 0; i < cartVals.length; i++) {
-        if ("_id" in cartVals[i] && cartVals[i]._id === id) occurs++;
-      }
-      console.log(occurs, "occurs");
-      return occurs;
-    }
-
-    getNbOccur(cartItems.id, cartItems);
-
-    console.log(cartItems[0]);
-
-    cartItems?.map((ar) => {
-      const number = getNbOccur(ar.id, cartItems);
-      ar.no = number;
-    });
-
-    const ids = cartItems.map((o) => o.id);
-    console.log(ids, "ids");
-
-    const filteredArray = cartItems.filter(
-      ({ id }, index) => !ids.includes(id, index + 1)
-    );
-
-    console.log(filteredArray, "filteredArray");
-    return filteredArray;
   };
 
-  // const mealCount = (id, cartItems) => {
-  //   let count = 0;
-
-  //   for (let i = 0; i < cartItems; i++) {
-  //     if ("id" in cartItems[i] && cartItems[i].id === id) count++;
-  //   }
-  //   return count;
-
-  // };
-  // mealCount();
-
-  console.log(cartItems, "cartItems");
-
-
-  
 
   return (
     <>

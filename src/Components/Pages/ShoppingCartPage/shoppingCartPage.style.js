@@ -1,11 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-// container:{
-//     position: 'relative',
-//         width: '50%',
-//   },
-  
+    
     image: {
         height: "50em",
         width: "100%",

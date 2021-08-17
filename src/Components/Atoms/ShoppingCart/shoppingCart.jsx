@@ -15,7 +15,7 @@ const ShoppingCart = (props) => {
       const data = response.data
       console.log(data, 'data')
       setMealById(response.data)
-      addMeal(data);
+      addMeal(data.meal);
     })
   }
   const classes = useStyles();
