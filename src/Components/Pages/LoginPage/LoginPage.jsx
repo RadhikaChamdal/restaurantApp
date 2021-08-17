@@ -5,7 +5,7 @@ import {useAuth0} from '@auth0/auth0-react'
 import { navigate } from "@reach/router"
 import HomePage from '../HomePage/HomePage'
 import useStyles from './LoginPage.style'
-import LandingPage from "../LandingPage/LandingPage";
+// import LandingPage from "../LandingPage/LandingPage";
 
 const LoginPage = () => {
   const {loginWithRedirect, isAuthenticated} = useAuth0()
