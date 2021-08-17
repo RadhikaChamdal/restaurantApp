@@ -8,6 +8,7 @@ import ShoppingCart from '../../Atoms/ShoppingCart/shoppingCart';
 
 const MultipleCards = (props) => {
     const {data, addMeal} = props
+    
     const classes = useStyles()
     
     return(

@@ -35,11 +35,11 @@ const Navigation = () => {
               </Button>
           </Link>
           
-          <Link style={{textDecoration:"none"}} to="cart">
+          {/* <Link style={{textDecoration:"none"}} to="cart">
           <Button className={classes.button2}>
           <Typography>View the Cart</Typography>
               </Button>
-          </Link>
+          </Link> */}
           <Link style={{textDecoration:"none"}} to="booking">
           <Button className={classes.button2}>
           <Typography>Bookings</Typography>

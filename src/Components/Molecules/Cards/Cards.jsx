@@ -5,7 +5,7 @@ import useStyles from "./Cards.style";
 import MultipleCards from "../MultipleCards/MultipleCards";
 
 const Cards = (props) => {
-  const { currentId, cartHandler, cartItems } = props;
+  const { cartHandler, cartItems } = props;
   const [allMeals, setAllMeals] = useState("");
   const [newMeal, setNewMeal] = useState("");
 

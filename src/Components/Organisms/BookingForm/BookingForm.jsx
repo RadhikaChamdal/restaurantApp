@@ -2,12 +2,18 @@ import React, { useState, useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
 import { Button, Grid } from "@material-ui/core";
 import Axios from 'axios'
+import {useAuth0} from '@auth0/auth0-react'
+import useStyles from './BookingForm.style'
 
 const BookingForm = () => {
+  const {isAuthenticated} = useAuth0()
+
   const [date, setDate] = useState();
   const [numberOfPeople, setNumberOfPeople] = useState();
   const [timeValue, setTimeValue] = useState();
   const [newBooking, setNewBooking]= useState()
+
+  const classes = useStyles()
 
   const formData = {
     date,
@@ -23,6 +29,7 @@ const BookingForm = () => {
    alert("All booked for you - see you later at Radhika's")
   }
 
+ 
 
 
   useEffect(() => {
@@ -31,7 +38,12 @@ const BookingForm = () => {
 
   console.log(formData);
   return (
-    <Grid container justifyContent="space-around">
+    
+    <>
+    <h1 className={classes.header}>Please log in to create a booking!</h1>
+    <>
+    {isAuthenticated && (
+       <Grid container justifyContent="space-around">
       <TextField
         id="date"
         label="Enter Booking Date"
@@ -74,6 +86,10 @@ const BookingForm = () => {
         Confirm Booking
       </Button>
     </Grid>
+    )}
+    </>
+   
+    </>
   );
 };
 
