@@ -12,6 +12,7 @@ import DeleteButton from "../../Atoms/DeleteButton/deleteButton";
 
 const ShoppingList = (props) => {
   const { cartItems, newMealData } = props;
+  console.log(props, 'testingpropss')
 
   const classes = useStyles();
 
@@ -97,7 +98,7 @@ const ShoppingList = (props) => {
                     <DeleteButton currentId={obj._id}> </DeleteButton>
                     </div>
                     <div className={classes.updateContainer}>
-                    <UpdateForm  newMealData={newMealData} currentId={obj._id} />
+                    <UpdateForm   newMealData={newMealData} currentId={obj._id} />
                     </div>
                   </ListItemSecondaryAction>
                 </ListItem>

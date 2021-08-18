@@ -38,7 +38,6 @@ const BookingForm = () => {
 
   console.log(formData);
   return (
-    
     <>
     <h1 className={classes.header}>Please log in to create a booking!</h1>
     <>

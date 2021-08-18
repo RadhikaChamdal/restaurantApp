@@ -45,10 +45,8 @@ const UpdateForm = (props) => {
     Axios.put(`http://localhost:5000/posts/${currentId}`, newMealData).then((response) => {
       setTest(response.data)
     });
-    setOpen(false)
-
-    
-   
+    setOpen(false)  
+     console.log(test, 'test')
   }
 
   useEffect(() => {
@@ -56,8 +54,7 @@ const UpdateForm = (props) => {
   }, [])
 
 
-console.log(test, 'tst')
-  
+
    
   return (
     <>
