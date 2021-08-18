@@ -24,9 +24,9 @@ const Cards = (props) => {
   }, []);
 
 
-  // useEffect(() => {
-  //   fetchMeals();
-  // }, [newMeal]);
+  useEffect(() => {
+    fetchMeals();
+  }, [newMeal]);
 
   // const newMealData = () => {
   //   setNewMeal()

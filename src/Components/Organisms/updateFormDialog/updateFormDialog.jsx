@@ -43,10 +43,10 @@ const UpdateForm = (props) => {
 
   const updateMeals = () => {
     Axios.put(`http://localhost:5000/posts/${currentId}`, newMealData).then((response) => {
-      setTest(response.data)
+      setNewMeal(response.data)
     });
     setOpen(false)  
-     console.log(test, 'test')
+     
   }
 
   useEffect(() => {
@@ -55,7 +55,7 @@ const UpdateForm = (props) => {
 
 
 
-   
+  // console.log(newMeal, 'test')
   return (
     <>
       <div className={classes.buttonPos}>
