@@ -11,7 +11,7 @@ import ShoppingList from "../../Organisms/ShoppingList/ShoppingList";
 const HomePage = () => {
   const classes = useStyles();
 
-  const [cartItems, setCartItems] = useState('')
+  let [cartItems, setCartItems] = useState('')
   
   const cartHandler = (item) => {
     setCartItems(item)

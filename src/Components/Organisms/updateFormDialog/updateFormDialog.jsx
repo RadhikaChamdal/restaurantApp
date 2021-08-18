@@ -11,7 +11,7 @@ import useStyles from './updateFormDialog.style'
 
 
 const UpdateForm = (props) => {
-  const { currentId, setNewMeal, fetchMeals } = props
+  const { currentId, setNewData } = props
   console.log(props, 'propss')
 
   const classes = useStyles();
@@ -39,23 +39,20 @@ const UpdateForm = (props) => {
     numberOfMeals:numberOfMeals,
   }
 
-
-
   const updateMeals = () => {
     Axios.put(`http://localhost:5000/posts/${currentId}`, newMealData).then((response) => {
-      setNewMeal(response.data)
+      setNewData(response.data)
+      
     });
     setOpen(false)  
-     
   }
 
   useEffect(() => {
     updateMeals()
   }, [])
 
+ console.log(test, 'test')
 
-
-  // console.log(newMeal, 'test')
   return (
     <>
       <div className={classes.buttonPos}>

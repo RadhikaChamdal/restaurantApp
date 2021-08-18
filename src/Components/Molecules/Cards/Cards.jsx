@@ -7,7 +7,7 @@ import MultipleCards from "../MultipleCards/MultipleCards";
 const Cards = (props) => {
   const { cartHandler, cartItems } = props;
   const [allMeals, setAllMeals] = useState("");
-  const [newMeal, setNewMeal] = useState("");
+ const [newMeal, setNewMeal] = useState("");
 
   const classes = useStyles();
 
@@ -32,7 +32,7 @@ const Cards = (props) => {
   //   setNewMeal()
   // }
 
-  console.log(newMeal, 'newmeal')
+
 
   //add meal functionality
   const addMeal = (addedMeal) => {

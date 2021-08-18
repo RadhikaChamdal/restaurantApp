@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
@@ -9,14 +9,34 @@ import Collapse from "@material-ui/core/Collapse";
 import useStyles from "./ShoppingList.style";
 import UpdateForm from "../updateFormDialog/updateFormDialog";
 import DeleteButton from "../../Atoms/DeleteButton/deleteButton";
+import Axios from 'axios'
+import { Button } from "@material-ui/core";
 
 const ShoppingList = (props) => {
-  const { cartItems, newMealData } = props;
-  console.log(props, 'testingpropss')
+  const { cartItems, newMealData, currentId } = props;
 
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(true);
+   const [newData, setNewData] = React.useState(false)
+
+ 
+
+  const fetchShoppingMeals = () => {
+    Axios.get(`http://localhost:5000/posts`).then((response) => {
+      let meal = response.data;
+      console.log(meal);
+    
+    });
+  };
+
+  useEffect(()=>{
+    fetchShoppingMeals()
+  }, [newData])
+
+
+  console.log(newData, "newData")
+
 
   const handleClick = () => {
     setOpen(!open);
@@ -66,6 +86,7 @@ const ShoppingList = (props) => {
   return (
     <>
       <div className={classes.listContainer}>
+        {/* <Button onClick={fetchShoppingMeals}>TESTING</Button> */}
         <h1 style={{ color: "#ffbc8b", width: "13em" }} onClick={handleClick}>
           View Your Shopping Cart
           {open ? <ExpandLess /> : <ExpandMore />}
@@ -98,7 +119,7 @@ const ShoppingList = (props) => {
                     <DeleteButton currentId={obj._id}> </DeleteButton>
                     </div>
                     <div className={classes.updateContainer}>
-                    <UpdateForm   newMealData={newMealData} currentId={obj._id} />
+                    <UpdateForm setNewData={setNewData} currentId={obj._id} />
                     </div>
                   </ListItemSecondaryAction>
                 </ListItem>
