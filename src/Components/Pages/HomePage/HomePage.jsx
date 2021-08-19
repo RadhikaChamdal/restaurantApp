@@ -11,13 +11,12 @@ import ShoppingList from "../../Organisms/ShoppingList/ShoppingList";
 const HomePage = () => {
   const classes = useStyles();
 
-  let [cartItems, setCartItems] = useState('')
+  const [cartItems, setCartItems] = useState('')
   
   const cartHandler = (item) => {
     setCartItems(item)
   }
 
-//  console.log(cartItems[0].meal.foodName, 'CARTTTTT')
 return (
     <>
       <div className={classes.container}>
@@ -35,7 +34,7 @@ return (
       </div>
       <h1 className={classes.header}>Take a look at all of our meals!</h1>
       <>
-      <ShoppingList cartItems={cartItems} />
+      <ShoppingList cartHandler={cartHandler} cartItems={cartItems} />
         <Cards cartItems={cartItems} cartHandler={cartHandler} />
        
       </>

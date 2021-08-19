@@ -12,10 +12,8 @@ import useStyles from './updateFormDialog.style'
 
 const UpdateForm = (props) => {
   const { currentId, setNewData } = props
-  console.log(props, 'propss')
-
+  
   const classes = useStyles();
-
 
   const [open, setOpen] = useState(false);
     const [food, setFood] = useState();
@@ -40,9 +38,8 @@ const UpdateForm = (props) => {
   }
 
   const updateMeals = () => {
-    Axios.put(`http://localhost:5000/posts/${currentId}`, newMealData).then((response) => {
+    Axios.put(`http://localhost:5000/posts/orders/611d307d6fcc222d4325ed3b`, newMealData).then((response) => {
       setNewData(response.data)
-      
     });
     setOpen(false)  
   }

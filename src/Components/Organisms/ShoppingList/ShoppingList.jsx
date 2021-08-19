@@ -13,30 +13,27 @@ import Axios from 'axios'
 import { Button } from "@material-ui/core";
 
 const ShoppingList = (props) => {
-  const { cartItems, newMealData, currentId } = props;
+  const { cartItems, newMealData, currentId, cartHandler } = props;
+
+  console.log(cartItems, "cartItems")
 
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(true);
-   const [newData, setNewData] = React.useState(false)
+   const [newData, setNewData] = React.useState()
 
  
-
-  const fetchShoppingMeals = () => {
-    Axios.get(`http://localhost:5000/posts`).then((response) => {
-      let meal = response.data;
-      console.log(meal);
-    
-    });
-  };
+ const fetchShoppingMeals = () => {
+      Axios.get(`http://localhost:5000/posts/findMeals`).then((response) => {
+        let meal = response.data;
+        cartHandler(meal)
+      });
+    };
+  
 
   useEffect(()=>{
     fetchShoppingMeals()
   }, [newData])
-
-
-  console.log(newData, "newData")
-
 
   const handleClick = () => {
     setOpen(!open);

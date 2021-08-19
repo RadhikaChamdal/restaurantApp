@@ -14,7 +14,6 @@ const Cards = (props) => {
   const fetchMeals = () => {
     Axios.get("http://localhost:5000/posts").then((response) => {
       const data = response.data;
-      console.log(response);
       setAllMeals(data);
     });
   };
