@@ -48,8 +48,6 @@ const UpdateForm = (props) => {
     updateMeals()
   }, [])
 
- console.log(test, 'test')
-
   return (
     <>
       <div className={classes.buttonPos}>
