@@ -9,38 +9,36 @@ import Collapse from "@material-ui/core/Collapse";
 import useStyles from "./ShoppingList.style";
 import UpdateForm from "../updateFormDialog/updateFormDialog";
 import DeleteButton from "../../Atoms/DeleteButton/deleteButton";
-import Axios from 'axios'
+import Axios from "axios";
 import { Button } from "@material-ui/core";
 
 const ShoppingList = (props) => {
   const { cartItems, newMealData, currentId, cartHandler } = props;
 
-  console.log(cartItems, "cartItems")
+  console.log(cartItems, "cartItems");
 
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(true);
-   const [newData, setNewData] = React.useState()
+  const [newData, setNewData] = React.useState();
 
- 
- const fetchShoppingMeals = () => {
-      Axios.get(`http://localhost:5000/posts/findMeals`).then((response) => {
-        let meal = response.data;
-        cartHandler(meal)
-      });
-    };
-  
+  // const fetchShoppingMeals = () => {
+  //   Axios.get(`http://localhost:5000/posts/findMeals`).then((response) => {
+  //     let meal = response.data;
+  //     cartHandler(meal);
+  //     console.log(meal, "meal");
+  //   });
+  // };
 
-  useEffect(()=>{
-    fetchShoppingMeals()
-  }, [newData])
+  // useEffect(() => {
+  //   fetchShoppingMeals();
+  // }, [newData]);
 
   const handleClick = () => {
     setOpen(!open);
   };
 
   function getNbOccur(id, cartVals) {
-    console.log(id, cartVals, "cold 2.0");
     var occurs = 0;
 
     for (var i = 0; i < cartVals.length; i++) {
@@ -61,7 +59,7 @@ const ShoppingList = (props) => {
 
   const filteredArray =
     cartItems &&
-    cartItems.filter(({ id }, index) => !ids.includes(id, index + 1));
+    cartItems?.filter(({ id }, index) => !ids.includes(id, index + 1));
 
   const filteredArr =
     filteredArray &&
@@ -113,10 +111,10 @@ const ShoppingList = (props) => {
                     className={classes.updateButtonContainer}
                   >
                     <div className={classes.deleteContainer}>
-                    <DeleteButton currentId={obj._id}> </DeleteButton>
+                      <DeleteButton currentId={obj._id}> </DeleteButton>
                     </div>
                     <div className={classes.updateContainer}>
-                    <UpdateForm setNewData={setNewData} currentId={obj._id} />
+                      <UpdateForm setNewData={setNewData} currentId={obj._id} />
                     </div>
                   </ListItemSecondaryAction>
                 </ListItem>
