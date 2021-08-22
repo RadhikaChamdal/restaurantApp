@@ -1,5 +1,5 @@
 import React from "react";
-import Axios from 'axios'
+import Axios from "axios";
 import Button from "@material-ui/core/Button";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import useStyles from "./shoppingCart.style";
@@ -7,17 +7,18 @@ import useStyles from "./shoppingCart.style";
 const ShoppingCart = (props) => {
   const { currentId, addMeal } = props;
 
-
-  const [mealById,setMealById] = React.useState('')
+  const [mealById, setMealById] = React.useState("");
 
   const fetchMealsById = () => {
-    Axios.get(`http://localhost:5000/posts/${currentId}`).then((response) =>{
-      const data = response.data
-      console.log(data, 'data')
-      setMealById(response.data)
-      addMeal(data.meal);
-    })
-  }
+    Axios.get(`http://localhost:5000/posts/${currentId}/id`).then(
+      (response) => {
+        const data = response.data;
+        console.log(data, "data");
+        setMealById(response.data);
+        addMeal(data.meal);
+      }
+    );
+  };
   const classes = useStyles();
 
   return (
